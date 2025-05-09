@@ -19,14 +19,14 @@ MDScreen:
   
     # this will create a space navigation bottom 
     MDBottomNavigation: 
-        panel_color: 1,0,0,1 
-        text_color_active: 0, 1, 0, 1 
+        panel_color: 1,1,1,.4
+        #text_color_active: 0,0,0,1
   
         # this will create a navigation button on the bottom of screen 
         MDBottomNavigationItem: 
             name: 'screen 1' 
             text: 'Settings' 
-            icon: 'setting' 
+            icon: './icons/setting.webp' 
   
             # this will be triggered when screen 1 is selected 
             # creates a label 
@@ -37,8 +37,8 @@ MDScreen:
         # this will create a navigation button on the bottom of screen 
         MDBottomNavigationItem: 
             name: 'screen 2' 
-            text: 'Microphone' 
-            icon: 'microphone' 
+            text: 'Search' 
+            icon: './icons/search.png' 
   
             # this will be triggered when screen 2 is selected 
             # creates a label 
@@ -49,8 +49,8 @@ MDScreen:
         # this will create a navigation button on the bottom of screen 
         MDBottomNavigationItem: 
             name: 'screen 3' 
-            text: 'Wi-FI' 
-            icon: 'wifi' 
+            text: 'Profile' 
+            icon: './icons/profile.png' 
   
             # this will be triggered when screen 3 is selected 
             # creates a label 
@@ -66,9 +66,10 @@ class Test(MDApp):
         
         # this will load kv lang 
         screen = Builder.load_string(KV) 
-  
+        self.theme_cls.theme_style = "Dark"
+        self.theme_cls.primary_palette = "Blue"  # "Purple", "Red"
         # returning screen 
         return screen 
-  
-# running app 
+        
+
 Test().run() 
